@@ -3,16 +3,14 @@
   "id": "autopotion",
   "version": "1.0.0",
   "name": "AutoPotion",
-  "description": "Automaticky hází potiony když ti dojde zdraví. Nastavení v GUI (klávesa P).",
-  "authors": ["ty"],
-  "license": "MIT",
+  "description": "Automaticky hází potiony.",
   "environment": "client",
   "entrypoints": {
     "main": ["cz.autopotion.AutoPotion"]
   },
   "depends": {
-    "fabricloader": ">=0.15.0",
+    "fabricloader": ">=0.18.0",
     "fabric-api": "*",
-    "minecraft": "~1.21"
+    "minecraft": "26.1.2"
   }
 }

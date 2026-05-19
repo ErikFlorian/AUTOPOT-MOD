@@ -1,39 +1,17 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
-    id 'maven-publish'
+    id 'net.fabricmc.fabric-loom' version '1.15-SNAPSHOT'
 }
 
 version = '1.0.0'
 group = 'cz.autopotion'
 
-repositories {
-    // Fabric maven je v Loom pluginu, nic extra není potřeba
-}
-
 dependencies {
-    minecraft "com.mojang:minecraft:1.21.1"
-    mappings "net.fabricmc:yarn:1.21.1+build.3:v2"
-    modImplementation "net.fabricmc:fabric-loader:0.16.5"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:0.107.0+1.21.1"
-
-    // Gson je součástí Minecraftu
-}
-
-processResources {
-    inputs.property "version", project.version
-    filteringCharset "UTF-8"
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
-    }
+    minecraft "com.mojang:minecraft:26.1.2"
+    modImplementation "net.fabricmc:fabric-loader:0.18.4"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.149.1+26.1.2"
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
-
-jar {
-    from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
-    }
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
